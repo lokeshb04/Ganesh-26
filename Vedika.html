@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganesh Chaturthi 2026 | Sacred Lotus & Divine Dawn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Mukta:wght@300;400;600;700&family=Rozha+One&family=Yatra+One&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --ivory: #FFFDF7;
+            --cream: #F9F6ED;
+            --peach: #F4A261;
+            --coral: #E76F51;
+            --gold: #D4AF37;
+            --dark-gold: #AA8B2C;
+            --brown: #4A3320;
+            --light-gold: #FBF2D5;
+            --saffron: #FF9933;
+            --text-main: #3E2723;
+            
+            --font-en-title: 'Cinzel', serif;
+            --font-en-body: 'Mukta', sans-serif;
+            --font-mr-title: 'Yatra One', cursive;
+            --font-mr-body: 'Mukta', sans-serif;
+            --font-ornate: 'Rozha One', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--ivory);
+            color: var(--text-main);
+            font-family: var(--font-en-body);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* --- Global Animations --- */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes breathe {
+            0%, 100% { transform: scale(1) translateY(0); }
+            50% { transform: scale(1.02) translateY(-4px); }
+        }
+
+        @keyframes haloPulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.15); opacity: 0.8; }
+        }
+
+        @keyframes spinSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes swingBell {
+            0%, 100% { transform: rotate(-8deg); }
+            50% { transform: rotate(8deg); }
+        }
+
+        @keyframes flicker {
+            0%, 100% { transform: scale(1) rotate(-1deg); opacity: 0.9; }
+            25% { transform: scale(1.05) rotate(1deg); opacity: 1; }
+            50% { transform: scale(0.95) rotate(-2deg); opacity: 0.8; }
+            75% { transform: scale(1.1) rotate(2deg); opacity: 0.95; }
+        }
+
+        @keyframes driftPetal {
+            0% { transform: translate(0, -10vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translate(20vw, 110vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes floatParticle {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+            50% { transform: translateY(-20px) scale(1.5); opacity: 0.8; }
+        }
+        
+        @keyframes incenseHaze {
+            0% { transform: translateX(0) scale(1); opacity: 0.2; }
+            50% { transform: translateX(10px) scale(1.1); opacity: 0.5; }
+            100% { transform: translateX(-10px) scale(1); opacity: 0.2; }
+        }
+
+        @keyframes mushakWalk {
+            0% { transform: translateX(-10vw) scaleX(1); }
+            30% { transform: translateX(40vw) scaleX(1); }
+            35% { transform: translateX(40vw) scaleX(1); } /* Pause */
+            40% { transform: translateX(40vw) scaleX(-1); } /* Turn around */
+            45% { transform: translateX(40vw) scaleX(-1); } /* Pause */
+            50% { transform: translateX(40vw) scaleX(1); } /* Turn back */
+            90% { transform: translateX(110vw) scaleX(1); }
+            100% { transform: translateX(110vw) scaleX(1); }
+        }
+
+        @keyframes revealUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Scroll Reveal Classes --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 253, 247, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .nav-logo {
+            font-family: var(--font-en-title);
+            font-size: 1.2rem;
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-family: var(--font-en-title);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--coral);
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background-color: var(--gold);
+            transition: 0.3s;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: radial-gradient(circle at center, var(--ivory) 0%, var(--cream) 100%);
+        }
+
+        /* Parallax Layers */
+        .hero-bg, .hero-mandala, .hero-arch, .hero-content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-mandala svg {
+            width: 80vmin;
+            height: 80vmin;
+            opacity: 0.15;
+            animation: spinSlow 90s linear infinite;
+        }
+
+        .hero-arch svg {
+            width: 95vw;
+            height: 95vh;
+            max-width: 1200px;
+            stroke: var(--gold);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .bells-container {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10%;
+        }
+        .bell {
+            width: 60px;
+            height: 150px;
+            transform-origin: top center;
+            animation: swingBell 4s ease-in-out infinite;
+        }
+        .bell:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        .hero-content {
+            flex-direction: column;
+            z-index: 10;
+        }
+
+        .ganesha-composition {
+            position: relative;
+            width: 250px;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .ganesha-halo {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--light-gold) 0%, transparent 70%);
+            animation: haloPulse 6s ease-in-out infinite;
+            top: 10%;
+        }
+
+        .ganesha-artwork {
+            width: 180px;
+            z-index: 2;
+            animation: breathe 5s ease-in-out infinite;
+            filter: drop-shadow(0 10px 15px rgba(212, 175, 55, 0.2));
+        }
+
+        .lotus-pedestal {
+            position: absolute;
+            bottom: -20px;
+            width: 220px;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .shree {
+            font-family: var(--font-mr-title);
+            font-size: 1.5rem;
+            color: var(--coral);
+            margin-bottom: 10px;
+        }
+
+        .hero-title {
+            font-family: var(--font-mr-title);
+            font-size: 4rem;
+            color: var(--gold);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+            margin-bottom: 10px;
+            text-align: center;
+            background: -webkit-linear-gradient(45deg, var(--gold), var(--coral));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-en-title);
+            font-size: 1.5rem;
+            color: var(--text-main);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .hero-date {
+            font-family: var(--font-en-body);
+            font-size: 1.2rem;
+            color: var(--brown);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-en-title);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            z-index: 20;
+            text-decoration: none;
+        }
+        .scroll-indicator span {
+            animation: float 2s infinite ease-in-out;
+        }
+
+        /* --- Invitation Section --- */
+        .invitation {
+            padding: 120px 20px;
+            background: var(--cream);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .invitation-card {
+            background: var(--ivory);
+            max-width: 800px;
+            padding: 60px 40px;
+            text-align: center;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.03);
+            z-index: 2;
+        }
+        .invitation-card::before {
+            content: '';
+            position: absolute;
+            top: 10px; left: 10px; right: 10px; bottom: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            pointer-events: none;
+        }
+        .invitation-title {
+            font-family: var(--font-mr-title);
+            font-size: 2.5rem;
+            color: var(--coral);
+            margin-bottom: 30px;
+        }
+        .invitation-text {
+            font-family: var(--font-mr-body);
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: var(--text-main);
+            font-weight: 400;
+        }
+        .decor-lotus {
+            position: absolute;
+            width: 100px;
+            opacity: 0.6;
+        }
+        .decor-lotus.top-left { top: -50px; left: -50px; transform: rotate(-45deg); }
+        .decor-lotus.bottom-right { bottom: -50px; right: -50px; transform: rotate(135deg); }
+
+        /* --- Event Details (Vertical Timeline) --- */
+        .details {
+            padding: 100px 20px;
+            background: var(--ivory);
+            position: relative;
+        }
+        .section-title {
+            text-align: center;
+            font-family: var(--font-en-title);
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 60px;
+            letter-spacing: 2px;
+        }
+        .timeline-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+            position: relative;
+            width: 100%;
+        }
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .timeline-content {
+            width: 45%;
+            padding: 20px;
+            background: var(--cream);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+        .timeline-icon {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: var(--ivory);
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--coral);
+            z-index: 2;
+        }
+        .timeline-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--coral);
+        }
+        .tl-title {
+            font-family: var(--font-en-title);
+            font-size: 1rem;
+            color: var(--peach);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .tl-desc {
+            font-family: var(--font-en-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* --- Aarti Section --- */
+        .aarti {
+            padding: 100px 20px;
+            background: radial-gradient(circle at center, var(--cream) 0%, var(--ivory) 100%);
+            text-align: center;
+            position: relative;
+        }
+        .aarti-grid {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .aarti-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .diya-container {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .diya-base {
+            position: absolute;
+            bottom: 20px;
+            width: 100px;
+            left: 25px;
+            fill: var(--gold);
+        }
+        .diya-flame {
+            position: absolute;
+            bottom: 60px;
+            left: 68px;
+            width: 15px;
+            height: 30px;
+            background: radial-gradient(ellipse at bottom, #FFF, #FAD6A5, #FF9933, transparent);
+            border-radius: 50% 50% 20% 20%;
+            animation: flicker 0.15s infinite alternate;
+            box-shadow: 0 0 30px 10px rgba(255, 153, 51, 0.4);
+            z-index: 5;
+        }
+        .aarti-title {
+            font-family: var(--font-mr-title);
+            font-size: 2rem;
+            color: var(--coral);
+            margin-bottom: 5px;
+        }
+        .aarti-time {
+            font-family: var(--font-en-title);
+            font-size: 1.5rem;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        /* --- Celebration Timeline --- */
+        .celebration {
+            padding: 100px 20px;
+            background: var(--ivory);
+            position: relative;
+        }
+        .lotus-timeline {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            position: relative;
+        }
+        .lotus-timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            bottom: 20px;
+            width: 2px;
+            background: var(--peach);
+            opacity: 0.5;
+        }
+        .ct-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+        .ct-dot {
+            width: 40px;
+            height: 40px;
+            background: var(--cream);
+            border: 2px solid var(--peach);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+        .ct-dot svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--coral);
+        }
+        .ct-content {
+            background: var(--cream);
+            padding: 15px 25px;
+            border-radius: 8px;
+            flex: 1;
+            border-left: 3px solid var(--coral);
+        }
+        .ct-date {
+            font-family: var(--font-en-title);
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .ct-desc {
+            font-family: var(--font-en-body);
+            color: var(--text-main);
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        /* --- Venue Section --- */
+        .venue {
+            padding: 120px 20px;
+            background: var(--cream);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .venue-arch {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 600px;
+            height: 100%;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        .venue-content {
+            position: relative;
+            z-index: 2;
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255, 253, 247, 0.9);
+            padding: 50px;
+            border: 1px solid var(--gold);
+            border-radius: 10px;
+        }
+        .venue-title {
+            font-family: var(--font-mr-title);
+            font-size: 3rem;
+            color: var(--coral);
+            margin-bottom: 20px;
+        }
+        .venue-address {
+            font-family: var(--font-en-body);
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: var(--text-main);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        .btn-directions {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, var(--gold), var(--peach));
+            color: #fff;
+            font-family: var(--font-en-title);
+            font-size: 1rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 2px;
+            border-radius: 30px;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-directions:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- Final Ganesha Section --- */
+        .closing {
+            position: relative;
+            padding: 150px 20px 100px;
+            background: var(--ivory);
+            text-align: center;
+            overflow: hidden;
+        }
+        .sunrise-glow {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80vw;
+            height: 80vw;
+            background: radial-gradient(circle, rgba(244,162,97,0.2) 0%, rgba(255,253,247,0) 70%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .closing-ganesha {
+            position: relative;
+            z-index: 2;
+            width: 300px;
+            margin: 0 auto 40px;
+            animation: float 8s ease-in-out infinite;
+        }
+        .closing-text-1 {
+            font-family: var(--font-mr-title);
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .closing-text-2 {
+            font-family: var(--font-mr-body);
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .closing-text-3 {
+            font-family: var(--font-mr-title);
+            font-size: 2rem;
+            color: var(--coral);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--ivory);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            z-index: 10;
+        }
+        footer p {
+            font-family: var(--font-en-title);
+            font-size: 1rem;
+            color: var(--brown);
+            margin: 5px 0;
+            letter-spacing: 1px;
+        }
+
+        /* --- Particles and Petals --- */
+        .particles {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 5;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            background: var(--gold);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--gold);
+        }
+        .petal {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: var(--peach);
+            border-radius: 0 50% 50% 50%;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 4;
+        }
+        .incense-haze {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at bottom, rgba(255,255,255,0.4) 0%, transparent 60%);
+            animation: incenseHaze 10s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        /* --- Mushak --- */
+        .mushak-container {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            pointer-events: none;
+            z-index: 10;
+            overflow: hidden;
+        }
+        .mushak {
+            position: absolute;
+            bottom: 0;
+            width: 60px;
+            animation: mushakWalk 20s linear infinite;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--ivory);
+                padding: 20px 0;
+                text-align: center;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .hero-title { font-size: 3rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .hero-date { font-size: 1rem; }
+            .ganesha-composition { transform: scale(0.8); }
+            
+            .invitation { padding: 80px 20px; }
+            .invitation-title { font-size: 2rem; }
+            .invitation-text { font-size: 1.2rem; }
+            
+            .timeline-container::before { left: 20px; }
+            .timeline-item, .timeline-item:nth-child(even) {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 50px;
+            }
+            .timeline-icon {
+                left: 20px;
+                transform: translate(-50%, -50%);
+            }
+            .timeline-content { width: 100%; }
+
+            .aarti-grid { flex-direction: column; gap: 40px; }
+            
+            .venue-title { font-size: 2.5rem; }
+            .venue-address { font-size: 1.2rem; }
+            
+            .closing-text-1 { font-size: 2.2rem; }
+            .closing-text-2 { font-size: 1.2rem; }
+            .closing-text-3 { font-size: 1.5rem; }
+            .closing-ganesha { width: 220px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particles Container -->
+    <div class="particles" id="particles"></div>
+    <div class="particles" id="petals"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-logo">Divine Dawn</div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#invitation">Invitation</a>
+            <a href="#aarti">Aarti</a>
+            <a href="#venue">Venue</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="incense-haze"></div>
+        
+        <div class="hero-mandala parallax" data-speed="20">
+            <svg viewBox="0 0 200 200" fill="none" stroke="var(--gold)" stroke-width="0.5">
+                <circle cx="100" cy="100" r="90" stroke-dasharray="2 4" />
+                <circle cx="100" cy="100" r="70" />
+                <path d="M100 10 L110 30 L130 20 L120 40 L140 40 L130 55 L150 65 L135 75 L150 90 L130 95 L140 110 L120 105 L125 125 L105 115 L100 135 L95 115 L75 125 L80 105 L60 110 L70 95 L50 90 L65 75 L50 65 L70 55 L60 40 L80 40 L70 20 L90 30 Z" fill="rgba(212, 175, 55, 0.05)" />
+                <circle cx="100" cy="100" r="40" />
+                <path d="M100 60 Q115 80 140 100 Q115 120 100 140 Q85 120 60 100 Q85 80 100 60 Z" />
+            </svg>
+        </div>
+
+        <div class="hero-arch parallax" data-speed="-15">
+            <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMin meet">
+                <path d="M 50 600 L 50 200 C 50 100, 200 50, 400 50 C 600 50, 750 100, 750 200 L 750 600" />
+                <path d="M 70 600 L 70 210 C 70 120, 210 70, 400 70 C 590 70, 730 120, 730 210 L 730 600" stroke-dasharray="5 5" />
+                <path d="M 400 50 L 400 10 M 350 20 L 350 0 M 450 20 L 450 0" stroke-width="2" />
+            </svg>
+        </div>
+
+        <div class="bells-container parallax" data-speed="10">
+            <div class="bell">
+                <svg viewBox="0 0 50 100" fill="var(--gold)">
+                    <path d="M25 0 L25 20 M15 20 Q25 10 35 20 L40 60 Q25 65 10 60 Z" />
+                    <circle cx="25" cy="65" r="5" />
+                    <line x1="25" y1="0" x2="25" y2="-50" stroke="var(--gold)" stroke-width="2" />
+                </svg>
+            </div>
+            <div class="bell">
+                <svg viewBox="0 0 50 100" fill="var(--gold)">
+                    <path d="M25 0 L25 20 M15 20 Q25 10 35 20 L40 60 Q25 65 10 60 Z" />
+                    <circle cx="25" cy="65" r="5" />
+                    <line x1="25" y1="0" x2="25" y2="-50" stroke="var(--gold)" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="hero-content parallax" data-speed="5">
+            <div class="shree reveal">॥ श्री गणेशाय नमः ॥</div>
+            
+            <div class="ganesha-composition reveal">
+                <div class="ganesha-halo"></div>
+                <!-- Abstract Elegant Ganesha SVG -->
+                <svg class="ganesha-artwork" viewBox="0 0 200 250" fill="none" stroke="var(--gold)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Ears -->
+                    <path d="M 85 80 C 40 70, 20 110, 40 150 C 50 170, 70 170, 80 150" fill="rgba(244,162,97,0.1)"/>
+                    <path d="M 115 80 C 160 70, 180 110, 160 150 C 150 170, 130 170, 120 150" fill="rgba(244,162,97,0.1)"/>
+                    <!-- Head -->
+                    <path d="M 75 70 C 75 40, 125 40, 125 70 C 125 100, 75 100, 75 70 Z" fill="var(--peach)" stroke="none" opacity="0.8"/>
+                    <path d="M 75 70 C 75 40, 125 40, 125 70" />
+                    <!-- Crown -->
+                    <path d="M 85 45 L 90 20 L 100 10 L 110 20 L 115 45" fill="var(--gold)"/>
+                    <circle cx="100" cy="30" r="4" fill="var(--coral)" stroke="none"/>
+                    <!-- Trunk -->
+                    <path d="M 90 100 C 90 140, 70 180, 100 200 C 115 210, 125 190, 115 180 C 105 170, 95 180, 105 190" />
+                    <!-- Tilak -->
+                    <path d="M 95 60 L 105 60 M 95 65 L 105 65 M 100 70 L 100 75" stroke="var(--coral)" stroke-width="2"/>
+                    <!-- Tusk -->
+                    <path d="M 85 110 L 70 115 M 115 110 L 125 113" />
+                </svg>
+                <!-- Lotus Pedestal -->
+                <svg class="lotus-pedestal" viewBox="0 0 200 80">
+                    <path d="M 100 70 C 100 70, 150 70, 180 40 C 150 50, 120 60, 100 70 Z" fill="var(--coral)" opacity="0.8"/>
+                    <path d="M 100 70 C 100 70, 50 70, 20 40 C 50 50, 80 60, 100 70 Z" fill="var(--coral)" opacity="0.8"/>
+                    <path d="M 100 70 C 100 70, 130 50, 140 20 C 120 40, 110 60, 100 70 Z" fill="var(--peach)"/>
+                    <path d="M 100 70 C 100 70, 70 50, 60 20 C 80 40, 90 60, 100 70 Z" fill="var(--peach)"/>
+                    <path d="M 100 70 C 100 70, 110 40, 100 10 C 90 40, 100 70, 100 70 Z" fill="var(--ivory)" stroke="var(--coral)" stroke-width="1"/>
+                </svg>
+            </div>
+            
+            <h1 class="hero-title reveal">गणपती बाप्पा मोरया!</h1>
+            <div class="hero-subtitle reveal">Ganesh Chaturthi</div>
+            <div class="hero-date reveal">14 September 2026 – 18 September 2026</div>
+        </div>
+
+        <a href="#invitation" class="scroll-indicator reveal">
+            Scroll to Begin
+            <span>↓</span>
+        </a>
+    </section>
+
+    <!-- Invitation Section -->
+    <section class="invitation" id="invitation">
+        <div class="invitation-card reveal">
+            <svg class="decor-lotus top-left" viewBox="0 0 100 100">
+                <path d="M50 100 Q 50 50 0 50 Q 50 50 50 0 Q 50 50 100 50 Q 50 50 50 100" fill="var(--peach)" opacity="0.5"/>
+                <path d="M50 90 Q 50 50 10 50 Q 50 50 50 10 Q 50 50 90 50 Q 50 50 50 90" fill="none" stroke="var(--gold)" stroke-width="1"/>
+            </svg>
+            
+            <h2 class="invitation-title">आपणांस सस्नेह निमंत्रण</h2>
+            <p class="invitation-text">
+                गणपती बाप्पांच्या आगमनाचा हा मंगलमय उत्सव आपल्या सर्वांच्या उपस्थितीने अधिक आनंदमय होईल. या पवित्र प्रसंगी आपण सहकुटुंब उपस्थित राहून बाप्पांचे दर्शन व आशीर्वाद घ्यावेत, ही नम्र विनंती.
+            </p>
+
+            <svg class="decor-lotus bottom-right" viewBox="0 0 100 100">
+                <path d="M50 100 Q 50 50 0 50 Q 50 50 50 0 Q 50 50 100 50 Q 50 50 50 100" fill="var(--peach)" opacity="0.5"/>
+                <path d="M50 90 Q 50 50 10 50 Q 50 50 50 10 Q 50 50 90 50 Q 50 50 50 90" fill="none" stroke="var(--gold)" stroke-width="1"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Event Details Timeline -->
+    <section class="details" id="details">
+        <h2 class="section-title reveal">Event Details</h2>
+        <div class="timeline-container">
+            
+            <div class="timeline-item reveal">
+                <div class="timeline-icon">
+                    <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+                </div>
+                <div class="timeline-content">
+                    <div class="tl-title">Date</div>
+                    <div class="tl-desc">14 Sept 2026 – 18 Sept 2026</div>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 0 1 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.78 3.08-2.15 4.1zM10 20h4v2h-4z"/></svg>
+                </div>
+                <div class="timeline-content">
+                    <div class="tl-title">Morning Aarti</div>
+                    <div class="tl-desc">7:00 AM</div>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+                </div>
+                <div class="timeline-content">
+                    <div class="tl-title">Evening Aarti</div>
+                    <div class="tl-desc">8:30 PM</div>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                </div>
+                <div class="timeline-content">
+                    <div class="tl-title">Venue</div>
+                    <div class="tl-desc">JP Harmony A4, 404, Palegaon, Ambernath East</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Aarti Section -->
+    <section class="aarti" id="aarti">
+        <div class="mushak-container">
+            <svg class="mushak" viewBox="0 0 100 60" fill="var(--brown)">
+                <!-- Mouse body -->
+                <path d="M20 50 Q 40 30 70 45 Q 80 50 90 48 Q 95 47 100 50 L 20 50 Z" opacity="0.8"/>
+                <path d="M70 45 Q 85 30 95 45" stroke="var(--brown)" stroke-width="2" fill="none"/> <!-- Ear -->
+                <circle cx="85" cy="40" r="2" fill="var(--ivory)"/> <!-- Eye -->
+                <!-- Tail -->
+                <path d="M20 48 Q 10 30 5 45" stroke="var(--brown)" stroke-width="2" fill="none"/>
+            </svg>
+        </div>
+
+        <h2 class="section-title reveal" style="font-family: var(--font-mr-title); color: var(--coral);">आरती</h2>
+        <div class="aarti-grid">
+            
+            <div class="aarti-card reveal">
+                <div class="diya-container">
+                    <div class="diya-flame"></div>
+                    <svg class="diya-base" viewBox="0 0 100 50">
+                        <path d="M 10 20 Q 50 60 90 20 L 70 10 Q 50 30 30 10 Z" fill="var(--gold)"/>
+                        <path d="M 40 25 L 60 25 L 55 45 L 45 45 Z" fill="var(--dark-gold)"/>
+                        <path d="M 30 45 L 70 45 L 75 50 L 25 50 Z" fill="var(--gold)"/>
+                    </svg>
+                </div>
+                <div class="aarti-title">प्रातः आरती</div>
+                <div class="aarti-time">7:00 AM</div>
+            </div>
+
+            <div class="aarti-card reveal">
+                <div class="diya-container">
+                    <div class="diya-flame"></div>
+                    <svg class="diya-base" viewBox="0 0 100 50">
+                        <path d="M 10 20 Q 50 60 90 20 L 70 10 Q 50 30 30 10 Z" fill="var(--gold)"/>
+                        <path d="M 40 25 L 60 25 L 55 45 L 45 45 Z" fill="var(--dark-gold)"/>
+                        <path d="M 30 45 L 70 45 L 75 50 L 25 50 Z" fill="var(--gold)"/>
+                    </svg>
+                </div>
+                <div class="aarti-title">सायं आरती</div>
+                <div class="aarti-time">8:30 PM</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Celebration Timeline -->
+    <section class="celebration">
+        <div class="lotus-timeline">
+            
+            <div class="ct-item reveal">
+                <div class="ct-dot">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <div class="ct-content">
+                    <div class="ct-date">14 September 2026</div>
+                    <div class="ct-desc">Ganesh Chaturthi Begins</div>
+                </div>
+            </div>
+
+            <div class="ct-item reveal">
+                <div class="ct-dot"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/></svg></div>
+                <div class="ct-content">
+                    <div class="ct-date">15 September 2026</div>
+                    <div class="ct-desc">Darshan & Aarti</div>
+                </div>
+            </div>
+
+            <div class="ct-item reveal">
+                <div class="ct-dot"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/></svg></div>
+                <div class="ct-content">
+                    <div class="ct-date">16 September 2026</div>
+                    <div class="ct-desc">Darshan & Aarti</div>
+                </div>
+            </div>
+
+            <div class="ct-item reveal">
+                <div class="ct-dot"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/></svg></div>
+                <div class="ct-content">
+                    <div class="ct-date">17 September 2026</div>
+                    <div class="ct-desc">Darshan & Aarti</div>
+                </div>
+            </div>
+
+            <div class="ct-item reveal">
+                <div class="ct-dot">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <div class="ct-content">
+                    <div class="ct-date">18 September 2026</div>
+                    <div class="ct-desc">Final Day / Celebration</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section class="venue" id="venue">
+        <svg class="venue-arch" viewBox="0 0 800 600" preserveAspectRatio="none">
+            <path d="M 50 600 L 50 150 C 50 50, 400 50, 400 50 C 400 50, 750 50, 750 150 L 750 600" fill="none" stroke="var(--gold)" stroke-width="4"/>
+            <path d="M 100 600 L 100 180 C 100 80, 400 80, 400 80 C 400 80, 700 80, 700 180 L 700 600" fill="none" stroke="var(--gold)" stroke-width="2"/>
+        </svg>
+
+        <div class="venue-content reveal">
+            <h2 class="venue-title">स्थळ</h2>
+            <div class="venue-address">
+                JP Harmony A4, 404,<br>
+                Palegaon, Ambernath East
+            </div>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=JP+Harmony+A4,+404,+Palegaon,+Ambernath+East" target="_blank" class="btn-directions">
+                Get Directions
+            </a>
+        </div>
+    </section>
+
+    <!-- Final Section -->
+    <section class="closing">
+        <div class="sunrise-glow"></div>
+        
+        <svg class="closing-ganesha reveal" viewBox="0 0 200 200" fill="none" stroke="var(--gold)" stroke-width="1.5">
+            <path d="M 100 180 Q 150 180 180 140 Q 150 160 100 160 Q 50 160 20 140 Q 50 180 100 180 Z" fill="var(--peach)" opacity="0.3"/>
+            <path d="M 100 160 Q 130 160 150 120 Q 120 140 100 140 Q 80 140 50 120 Q 70 160 100 160 Z" fill="var(--coral)" opacity="0.4"/>
+            <!-- Elegant large outline -->
+            <path d="M 100 20 C 130 20 150 50 150 80 C 150 120 120 130 100 150 C 80 130 50 120 50 80 C 50 50 70 20 100 20 Z" />
+            <path d="M 80 60 C 90 70 110 70 120 60" />
+            <path d="M 100 80 C 100 100 80 120 100 140 C 110 130 100 110 100 80" />
+            <circle cx="100" cy="50" r="3" fill="var(--coral)"/>
+        </svg>
+
+        <div class="closing-text-1 reveal">गणपती बाप्पा मोरया!</div>
+        <div class="closing-text-2 reveal">आपली उपस्थिती हीच आमच्यासाठी बाप्पांचा आशीर्वाद आहे.</div>
+        <div class="closing-text-3 reveal">॥ मंगलमूर्ती मोरया ॥</div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>With love and devotion,</p>
+        <p>Ganpati Bappa Morya!</p>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // --- Scroll Reveal with Intersection Observer ---
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // --- Parallax Effect (Desktop only, minimal performance impact) ---
+        const parallaxElements = document.querySelectorAll('.parallax');
+        const isDesktop = window.matchMedia("(min-width: 769px)").matches;
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (isDesktop && !prefersReducedMotion) {
+            window.addEventListener('mousemove', (e) => {
+                const x = (e.clientX / window.innerWidth) - 0.5;
+                const y = (e.clientY / window.innerHeight) - 0.5;
+                
+                parallaxElements.forEach(el => {
+                    const speed = el.getAttribute('data-speed');
+                    el.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+                });
+            });
+        }
+
+        // --- Generate Floating Golden Particles ---
+        const particlesContainer = document.getElementById('particles');
+        if (!prefersReducedMotion) {
+            for (let i = 0; i < 30; i++) {
+                let particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                let size = Math.random() * 4 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                
+                particle.style.animation = `floatParticle ${Math.random() * 5 + 3}s ease-in-out infinite`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // --- Generate Drifting Lotus Petals ---
+        const petalsContainer = document.getElementById('petals');
+        if (!prefersReducedMotion) {
+            setInterval(() => {
+                let petal = document.createElement('div');
+                petal.classList.add('petal');
+                
+                petal.style.left = `${Math.random() * 100}vw`;
+                petal.style.animation = `driftPetal ${Math.random() * 5 + 8}s linear forwards`;
+                
+                petalsContainer.appendChild(petal);
+                
+                // Cleanup
+                setTimeout(() => {
+                    petal.remove();
+                }, 13000);
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
